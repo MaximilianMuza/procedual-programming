@@ -32,7 +32,10 @@
 #
 
 all:
-	gcc -std=c99 -pedantic -Wall -Wextra -o blatt01_1.exe blatt01_1.c 
-
-# Öffne Programm blatt01_1.exe nach ausführen der Datei blatt01_1.c mit der Makefile
+	gcc -std=c99 -pedantic -Wall -Wextra -o blatt01_1.exe blatt01_1.c
+	# Öffne Programm blatt01_1.exe nach ausführen der Datei blatt01_1.c mit der Makefile
 	./blatt01_1.exe
+	#Kompiliere die Datei blat01_3.c
+	gcc -std=c99 -pedantic -Wall -Wextra -o blatt01_3.exe blatt01_3.c 
+	#Öffne das Programm blat01_3.exe
+	./blatt01_3.exe
