@@ -4,9 +4,11 @@
 
 int main() {
 	
-	uint16_t a16_t = 2;
+	char num_1[20];
+    printf("Enter number: ");
+    scanf("%s", num_1);
+    printf("The binary number of %s is: %s.", num_1, bin_num_1);
+    
+    return 0;
 
-	printf("%d", a16_t);
-	
-  	return 0;
 }
