@@ -36,33 +36,6 @@ int main() {
 
   	printf("\n");
 
-	// uint16_t num, exponent, n, r;
-	// char binary_num[17];
-	// exponent = 16;
-
- //    printf("Bitte gebe eine Zahl ein: \n");
- //    scanf("%hd", &num);
-
-	// while(exponent >= 0) {
-	   	
-	//    	n = num/2(exponent);
-	//    	r = num%2(exponent);
-
-	//    	if(n > 2) {
-	   	
-	//    		r = r + (n - 1)*2(exponent);
-	//    		n = 1;
-
-	//    	}
-
-	//    	binary_num[exponent - 16] = n;
-
-	//     exponent = exponent - 1;
-	// }
-
-	// printf( "Das ist die Zahl: %hd\n", num);
-	// printf( "Und das ist sie in Binärschreibweise: %s\n", binary_num);
-
    	return 0;
 
 }

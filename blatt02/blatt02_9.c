@@ -4,20 +4,15 @@
 
 int main() {
 
-	int8_t num_1, num_2, sum, wrap_state;
-	num_1 = 20;
-	num_2 = 0;
-	wrap_state = 0;
+	int16_t num_1, num_2;
+	num_1 = 10000;
 
 	printf("Programm zur Ausgabe von Zahlen die addiert mit 20 nicht zum wrap-around führen\n");
 
-	while(!wrap_state) {
+	for(num_2 = 1; num_2 <= (32767 - num_1); num_2++) {
 
-		sum = num_1 + num_2;
-		printf("%d\n", sum);
+		printf("%d\n", num_2);
 
-		num_2++;
-		
 	}
 
    	return 0;

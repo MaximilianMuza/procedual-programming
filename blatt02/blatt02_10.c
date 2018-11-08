@@ -13,7 +13,7 @@ int main() {
 		while(r <= (N - (n - 1))) {
 
 			printf("*");
-			r++;
+            r++;
 
 		}
 

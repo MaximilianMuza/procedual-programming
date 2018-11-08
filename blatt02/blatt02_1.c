@@ -52,6 +52,7 @@ int main() {
   	// Ausführung einer Multiplikation der beiden obigen Werte
   	// Zuweisung des Ergebnisses zur Variable c_32
   	// Zuweisung des Wertes von c_32 zu c_16
+    // Da wrap-around andere Zahl
   c_16 = c_32 = a_32 * b_32;
   	// Ausgeben des Rechenweges als String
   	// Kein Einsetzen von Variablen 
@@ -62,6 +63,8 @@ int main() {
   	// Ausführen einer Multiplikation zweier Variablen der Bitlänge 32
   	// Zuweisen des Ergebnisses zu einer Variable der Bitlänge 16
   	// Zuweisen des Wertes von c_16 zu c_32 mit der Bitlänge 32
+    /* Da Wert mit Bitlänge 16 genauso dargestellt werden kann mit Bitlänge 16, 
+    sind beide Werte gleich */
   c_32 = c_16 = a_32 * b_32;
   	// Ausgeben des Rechenweges
   printf("c_32 = c_16 = a_32 * b_32\n");
