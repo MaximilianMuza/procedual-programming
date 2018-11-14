@@ -9,10 +9,14 @@ int main() {
 
 	printf("Programm zur Ausgabe von Zahlen die addiert mit 20 nicht zum wrap-around führen\n");
 
-	for(num_2 = 1; num_2 <= (32767 - num_1); num_2++) {
+	// for(num_2 = 1; num_2 <= (32767 - num_1); num_2++) {
 
-		printf("%d\n", num_2);
+	// 	printf("%d\n", num_2);
 
+	// }
+	while(num_1+num_2 > 0){
+		printf("%d", num_2);
+		num_2++;
 	}
 
    	return 0;

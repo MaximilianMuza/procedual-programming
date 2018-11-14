@@ -6,7 +6,7 @@ int main() {
 
 	// Definiere Variable i
 	// i entspricht der Bitlänge von uint16_t
-	int i = 16, val;
+	int i = 15, val;
 	// Definiere Variable eingabe_nummer
 	uint16_t eingabe_nummer; 
 
