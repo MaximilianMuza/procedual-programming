@@ -24,3 +24,7 @@ blatt03_3a.exe: blatt03_3a.c
 blatt03_3b.exe: blatt03_3b.c
 	$(CC) $(CFLAGS) -o blatt03_3b.exe blatt03_3b.c
 	./blatt03_3b.exe
+
+blatt03_3c.exe: blatt03_3c.c
+	$(CC) $(CFLAGS) -o blatt03_3c.exe blatt03_3c.c
+	./blatt03_3c.exe
