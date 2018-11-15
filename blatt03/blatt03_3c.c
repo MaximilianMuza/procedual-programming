@@ -3,7 +3,7 @@
 
 int main() {
 	
-	unsigned int  a = 200, b = 3, product, remainder;
+	unsigned int  a = 3528, b = 3780, product, remainder;
 	int i = 1;
 
 	do {
@@ -16,9 +16,13 @@ int main() {
 		a = b;
 		b = remainder;
 
+		i = 1;
+		product = 0;
+
 	} while(b != 0);
 
 	printf("%d\n", a);
+
 	return 0;
 }
 
