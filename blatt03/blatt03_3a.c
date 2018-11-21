@@ -3,7 +3,7 @@
 
 int main() {
 	
-	unsigned int a = 3528, b = 3780, diff_abs, orig_a, orig_b;
+	unsigned int a = 36, b = 12, diff_abs, orig_a, orig_b;
 	
 	orig_a = a;
 	orig_b = b;

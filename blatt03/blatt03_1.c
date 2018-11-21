@@ -8,11 +8,11 @@ int main() {
 
 	do {
 
-		epsilon = 0.5 * epsilon;
+		epsilon = 0.5f * epsilon;
 		printf("%d: %.50f\n", i, epsilon);
 		i++;
 
-	} while(1 + 0.5 * epsilon > 1);
+	} while(1 + 0.5f * epsilon > 1);
 
 	return 0;
 }
