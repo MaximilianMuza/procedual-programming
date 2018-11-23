@@ -28,12 +28,11 @@ int outputSodoku(int num, int i, int v, int state) {
 int checkSodoku() {
 	for (int x = 0; x < 9; x++) {
 		for (int y = 0; y < 9; y++) {
-			if(Array[x][y] == 0) {
-				return 1;
-			}
-			for (int z = 0; z < 9; z++) {
-				if(Array[x][y] == Array[x][z+1]) {
-					return 0;
+			if(Array[x][y] != 0) {
+				for (int z = 0; z < 9; z++) {
+					if(Array[x][y] == Array[x][z] && y != z) {
+						return 0;
+					}
 				}
 			}
 		}
@@ -44,7 +43,10 @@ int checkSodoku() {
 int main() {
 	
 	int i, v, num, state;
-	state = 0;
+	num = state = 0;
+	i = v = 1;
+
+	state = outputSodoku(num, i, v, state);
 
 	do {
 
@@ -54,12 +56,11 @@ int main() {
 			printf("Du kannst nur Werte zwischen 1 und 9 wählen. Versuche erneut: ");
 			scanf("%d,%d,%d", &num, &i, &v);
 		}
+		state = outputSodoku(num, i, v, state);
 		while(checkSodoku() == 0) {
 			printf("Du hast einen Fehler gemacht. Versuche erneut: ");
 			scanf("%d,%d,%d", &num, &i, &v);
 		}	
-
-		state = outputSodoku(num, i, v, state);
 
 	} while(state == 0);
 
