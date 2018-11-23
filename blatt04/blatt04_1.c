@@ -7,9 +7,8 @@ int main() {
 	unsigned int k, n;
 
 	k = 0;
-	x = 0.0;
 	a = -1.0;
-	c = sum = 0.0;
+	c = sum = x = 0.0;
 	sum_old = 1.0;
 
 	printf("Bitte gebe einen Wert für x ein: ");

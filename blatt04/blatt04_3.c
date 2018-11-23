@@ -15,7 +15,7 @@ int main() {
 	// Erhalte eingegebenen Wert von N
     scanf("%f", &x);
 
-	for(k = 1; sum != sum_old; k++) {
+	for(k = 1; sum != sum_old || k < 300; k++) {
 
 		num = k + 1;
 		a *= -1.0; 
