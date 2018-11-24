@@ -41,7 +41,7 @@ int outputSodoku(int i, int v, int state) {
 	for (i = 0; i < 9; i++) {
 		printf("%d | ", i+1);
 		for (v = 0; v < 9; v++) {
-			if(Array[i][v] == 0) state = 0; 
+			(Array[i][v] == 0) ? (state = 0) : (state = 1);
 			printf("%d ", Array[i][v]);
 			if((v+1)%3==0) {
 				printf("| ");
@@ -114,6 +114,7 @@ int main() {
 
 	} while(state == 0);
 
+	printf("Herzlichen Glückwunsch! Du hast das Sodoku erfolgreich gelöst.\n");
 	
 	return 0;
 }
