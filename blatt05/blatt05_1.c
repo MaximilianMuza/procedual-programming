@@ -3,31 +3,34 @@
 int Array[9][9] = {0};
 
 int makeSodoku() {
-	Array[0][2] = 7;
-	Array[0][6] = 3;
-	Array[0][8] = 2;
-	Array[1][0] = 2;
-	Array[1][5] = 5;
-	Array[1][7] = 1;
-	Array[2][3] = 8;
-	Array[2][5] = 1;
-	Array[2][6] = 4;
-	Array[3][1] = 1;
-	Array[3][4] = 9;
-	Array[3][5] = 6;
-	Array[3][8] = 8;
-	Array[4][1] = 7;
-	Array[4][2] = 6;
-	Array[4][7] = 4;
-	Array[4][8] = 9;
-	Array[6][3] = 1;
-	Array[6][5] = 3;
-	Array[7][0] = 8;
+	Array[0][2] = 2;
+	Array[0][6] = 9;
+	Array[1][2] = 4;
+	Array[1][3] = 7;
+	Array[1][4] = 6;
+	Array[1][5] = 8;
+	Array[1][6] = 5;
+	Array[2][0] = 3;
+	Array[2][4] = 5;
+	Array[2][8] = 1;
+	Array[3][1] = 9;
+	Array[3][4] = 7;
+	Array[3][7] = 5;
+	Array[4][3] = 6;
+	Array[4][5] = 5;
+	Array[5][1] = 6;
+	Array[5][4] = 2;
+	Array[5][7] = 8;
+	Array[6][0] = 5;
+	Array[6][4] = 1;
+	Array[6][8] = 6;
 	Array[7][2] = 1;
-	Array[7][4] = 6;
-	Array[8][3] = 7;
-	Array[8][7] = 6;
-	Array[8][8] = 3;
+	Array[7][3] = 4;
+	Array[7][4] = 9;
+	Array[7][5] = 2;
+	Array[7][6] = 8;
+	Array[8][2] = 8;
+	Array[8][6] = 7;
 	return 0;
 }
 
