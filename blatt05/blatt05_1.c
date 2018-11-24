@@ -58,6 +58,10 @@ int outputSodoku(int i, int v, int state) {
 int checkSodoku(int num, int i, int v) {
 	i -= 1;
 	v -= 1;
+	if(num == 0) {
+		Array[i][v] = num;
+		return 1;
+	}
 	for (int r = 0; r < 9; r++) { // Überprüfe ob alle Werte in der Reihe zu dem Wert unterschiedlich sind 
 		if(num == Array[i][r] && v != r) {
 			return 0;
