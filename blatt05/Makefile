@@ -12,7 +12,3 @@ CFLAGS = -std=c99 -pedantic -Wall -Wextra -lm
 blatt05_1.exe: blatt05_1.c
 	$(CC) $(CFLAGS) -o blatt05_1.exe blatt05_1.c
 	./blatt05_1.exe
-
-blatt05_2.exe: blatt05_2.c
-	$(CC) $(CFLAGS) -o blatt05_2.exe blatt05_2.c
-	./blatt05_2.exe
