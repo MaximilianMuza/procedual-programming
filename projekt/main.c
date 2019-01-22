@@ -19,7 +19,6 @@ int brickl[W];
 void setup()
 {
   initscr();
-  //raw();
   clear();
   noecho();
   cbreak();
@@ -37,6 +36,7 @@ void setup()
 void draw()
 {
   clear();
+  int block[2] = {10,25};
   for(int i = 0 ; i<H+2 ; i++)
   {
     for(int j = 0 ; j < W+2; j++)
@@ -44,6 +44,10 @@ void draw()
         if (j==0 || j == W+1 || i == 0 || i == H+1)
         {
           mvprintw(i,j,"█");
+        }
+        else if (j == block[0] && i == block[1])
+        {
+          mvprintw(i,j,"████");
         }
         else if (i == y && j == x)
         {
@@ -88,14 +92,30 @@ void logic()
                         if(i < 9){
                           y--;
                           input();
-                          if(dir == LEFT) { x--;}
-                          if(dir == RIGHT) { x++;}
+                          if(dir == LEFT) {
+                            if(x==1){break;} 
+                            x -= 2; 
+                            dir = STOP;
+                          }
+                          if(dir == RIGHT) {
+                            if(x==W){break;} 
+                            x += 2; 
+                            dir = STOP;
+                          }
                           draw();
                         }else{
                           y++;
                           input();
-                          if(dir == LEFT) { x--;}
-                          if(dir == RIGHT) { x++;}
+                          if(dir == LEFT) {
+                            if(x==1){break;} 
+                            x -= 2; 
+                            dir = STOP;
+                          }
+                          if(dir == RIGHT) {
+                            if(x==W){break;} 
+                            x += 2; 
+                            dir = STOP;
+                          }
                           draw();
                         }
                       }
@@ -109,10 +129,7 @@ void logic()
 
 int main(int argc,char * argv[])
 {
-  //  srand(time(0));   // brickl = rand()%W;
     setlocale(LC_ALL, "");
-
-
     setup();
     while (!gameover)
     {
