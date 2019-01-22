@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <locale.h>
 #include <ncurses.h>
-#include <unistd.h>
-
 
 #define H 30
 #define W 30
@@ -13,7 +11,7 @@ bool gameover = false;
 typedef enum eDirection { STOP=0, UP, DOWN, LEFT, RIGHT, JUMP} eDirection;
 eDirection dir;
 int x, y, brickx ,bricky , score;
-
+int brickbool = 0;
 int brickl[W];
 
 void setup()
@@ -45,13 +43,18 @@ void draw()
         {
           mvprintw(i,j,"█");
         }
-        else if (j == block[0] && i == block[1])
+        else if ((j == block[0] || j == block[0]+1 || j == block[0]+2 || j == block[0]+3) && i == block[1])
         {
-          mvprintw(i,j,"████");
+          mvprintw(i,j,"☐");
         }
         else if (i == y && j == x)
         {
             mvprintw(i, j, "¶");
+        }
+        else if ((x == block[0] || x == block[0]+1 || x == block[0]+2 || x == block[0]+3) && y == block[1]-1)
+        {
+          mvprintw(block[1]-1, x, "¶");
+          brickbool = 1;
         }
     }
   }
@@ -94,13 +97,17 @@ void logic()
                           input();
                           if(dir == LEFT) {
                             if(x==1){break;} 
-                            x -= 2; 
+                            x -= 3; 
                             dir = STOP;
                           }
                           if(dir == RIGHT) {
                             if(x==W){break;} 
-                            x += 2; 
+                            x += 3; 
                             dir = STOP;
+                          }
+                          if(brickbool == 1) {
+                            dir = STOP;
+                            break;
                           }
                           draw();
                         }else{
@@ -108,13 +115,17 @@ void logic()
                           input();
                           if(dir == LEFT) {
                             if(x==1){break;} 
-                            x -= 2; 
+                            x -= 3; 
                             dir = STOP;
                           }
                           if(dir == RIGHT) {
                             if(x==W){break;} 
-                            x += 2; 
+                            x += 3; 
                             dir = STOP;
+                          }
+                          if(brickbool == 1) {
+                            dir = STOP;
+                            break;
                           }
                           draw();
                         }
