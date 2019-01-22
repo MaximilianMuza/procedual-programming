@@ -34,8 +34,11 @@ void setup()
 void draw()
 {
   clear();
-  int block[2] = {10,25};
-  for(int i = 0 ; i<H+2 ; i++)
+  int block1[2] = {10,25};
+  int block2[2] = {15,20};
+  int block3[2] = {4,15};
+  int block4[2] = {20,7};
+  for(int i = 0 ; i < H+2 ; i++)
   {
     for(int j = 0 ; j < W+2; j++)
     {
@@ -43,7 +46,19 @@ void draw()
         {
           mvprintw(i,j,"█");
         }
-        else if ((j == block[0] || j == block[0]+1 || j == block[0]+2 || j == block[0]+3) && i == block[1])
+        else if ((j == block1[0] || j == block1[0]+1 || j == block1[0]+2 || j == block1[0]+3) && i == block1[1])
+        {
+          mvprintw(i,j,"☐");
+        }
+        else if ((j == block2[0] || j == block2[0]+1 || j == block2[0]+2 || j == block2[0]+3) && i == block2[1])
+        {
+          mvprintw(i,j,"☐");
+        }
+        else if ((j == block3[0] || j == block3[0]+1 || j == block3[0]+2 || j == block3[0]+3) && i == block3[1])
+        {
+          mvprintw(i,j,"☐");
+        }
+        else if ((j == block4[0] || j == block4[0]+1 || j == block4[0]+2 || j == block4[0]+3) && i == block4[1])
         {
           mvprintw(i,j,"☐");
         }
@@ -51,9 +66,20 @@ void draw()
         {
             mvprintw(i, j, "¶");
         }
-        else if ((x == block[0] || x == block[0]+1 || x == block[0]+2 || x == block[0]+3) && y == block[1]-1)
+        else if ((x == block1[0] || x == block1[0]+1 || x == block1[0]+2 || x == block1[0]+3) && y == block1[1]-1)
         {
-          mvprintw(block[1]-1, x, "¶");
+          brickbool = 1;
+        }
+        else if ((x == block2[0] || x == block2[0]+1 || x == block2[0]+2 || x == block2[0]+3) && y == block2[1]-1)
+        {
+          brickbool = 1;
+        }
+        else if ((x == block3[0] || x == block3[0]+1 || x == block3[0]+2 || x == block3[0]+3) && y == block3[1]-1)
+        {
+          brickbool = 1;
+        }
+        else if ((x == block4[0] || x == block4[0]+1 || x == block4[0]+2 || x == block4[0]+3) && y == block4[1]-1)
+        {
           brickbool = 1;
         }
     }
@@ -145,6 +171,7 @@ int main(int argc,char * argv[])
     while (!gameover)
     {
       draw();
+      brickbool = 0;
       input();
       logic();
     }
