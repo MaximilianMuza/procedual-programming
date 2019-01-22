@@ -131,11 +131,11 @@ void logic()
                             x += 3; 
                             dir = STOP;
                           }
+                          draw();
                           if(brickbool == 1) {
                             dir = STOP;
                             break;
                           }
-                          draw();
                         }else{
                           y++;
                           input();
@@ -149,11 +149,11 @@ void logic()
                             x += 3; 
                             dir = STOP;
                           }
+                          draw();
                           if(brickbool == 1) {
                             dir = STOP;
                             break;
                           }
-                          draw();
                         }
                       }
        default: break;
