@@ -1,12 +1,10 @@
-#include <stdio.h>
+#include<stdio.h>
 
-int main() {
-  int a, b;
-
-    printf("\n\n Hallo TUTOR! \n\n");
-  a = 22;
-  b = 20;
-  printf("Die Antwort ist: \t %d \n\n", a + b);
-
-  return 0;
+int main(int argc, char* argv[]) {
+    int i;
+    printf("argc: %d\n", argc); 
+    for(i=0; i < argc; i++) {
+        printf("argv[%d]: %s\n", i, argv[i]);
+    }
+    return 0;
 }
