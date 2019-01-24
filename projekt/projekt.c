@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <locale.h>   //setlocale(); ASCII signs
-#include <time.h>     // srand(time(0));
 #include <ncurses.h>  //create window
 
 #define H 30
@@ -16,10 +15,11 @@ int x, y , score = 0;
 bool flor = true;
 int bricks[4][2] = {{5,24},{10,20},{4,13},{13,7}}; 
 
+
 bool checkflor()
 {
   for(int v = 0; v < 5; v++) {
-    for (int i = 0 ; i<BL ; i++)
+    for (int i = 0 ; i < BL ; i++)
     {
       if((x == bricks[v][0]+i) && (y == bricks[v][1]-1)){
         // score++;
@@ -35,6 +35,20 @@ bool checkflor()
     }
   }
   return 0;
+}
+
+void newLevel() {
+  int tmp1 = bricks[3][1];
+  bricks[3][1] = bricks[0][1];
+  bricks[0][1] = tmp1;
+  y = bricks[3][1]-1;
+  x = bricks[3][0]; 
+  for(int t; t < 3; t++) {
+    if(bricks[t][0]+7 > W) {
+      bricks[t][0] = 0;
+    }
+    bricks[t][0] = bricks[t][0]+2;
+  }
 }
 
 void setup()
@@ -161,7 +175,6 @@ void logic()
 
 int main(int argc,char * argv[])
 {
-  //  srand(time(0));   // brickl = rand()%W;
     setlocale(LC_ALL, "");
 
     setup();
@@ -170,6 +183,9 @@ int main(int argc,char * argv[])
       draw();
       input();
       logic();
+      if(y < 8 && checkflor()) {
+        newLevel();
+      }
     }
 
 
